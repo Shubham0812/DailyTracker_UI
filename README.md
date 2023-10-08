@@ -37,6 +37,10 @@ Before working on an issue please **leave a comment** and I'll assign the issue 
 * Open the project on GitHub and raise it to the main branch on the repo
 
 
+#### How to Raise a PR
+[Pull Request Example](https://github.com/Shubham0812/DailyTracker_UI/pull/2)
+
+
 ## Contributing 🤖
 To start contributing, please check out [contributing.md](https://github.com/Shubham0812/Color.Dev_UI/blob/main/docs/Contributing_Guide.md). 
 
