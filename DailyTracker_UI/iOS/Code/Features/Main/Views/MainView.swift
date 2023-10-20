@@ -17,6 +17,11 @@ struct MainView: View {
     
     private var items: FetchedResults<Item>
 
+    private let itemFormatter: DateFormatter = {
+           let formatter = DateFormatter()
+           formatter.dateFormat = "MMMM dd, yyyy"
+           return formatter
+       }()
     
     // MARK: - Views
     var body: some View {
