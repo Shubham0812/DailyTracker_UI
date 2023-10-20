@@ -20,7 +20,8 @@ These are general guidelines when contributing to the project. These guidelines 
 
  | Branch name | Description. |
 |---|:--|
- | **main** |  After testing and reviewing merge conflicts the code will be merged into main. Before code can be merged into master it will go through a QA process. |
+ | **develop** | Always checkout from the develop branch, and create your subbranch. Raise your PRs against the develop branch.|
+ | **main** |  After Reviewing merge conflicts the code will be merged into main from the develop branch. Before code can be merged into master it will go through run scripts. |
  | **Creating a branch** |  When creating a branch include the following: a description of the task and the issue ID e.g. _add-coredata-module-1337_. Hyphens should be used to seperate words. |
 
 ------------------
