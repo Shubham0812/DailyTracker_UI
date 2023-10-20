@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ImageView: View {
+struct UserImageView: View {
     
     var imageName: Image
     var lineWidth: CGFloat
