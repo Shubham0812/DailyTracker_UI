@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+class MainViewModel: ObservableObject {
+    
+    // MARK: - Variables
+    var userName: String = ""
+    
+    
+    init() {
+        // Default userName
+        userName = "User"
+    }
+    
+}

@@ -32,8 +32,8 @@ struct UserImageView: View {
     }
 }
 
-#Preview {
-        ImageView(imageName: Image("EX"), lineWidth: 6, borderColor: .yellow)
-    }
+//#Preview {
+//        ImageView(imageName: Image("EX"), lineWidth: 6, borderColor: .yellow)
+//    }
 
 
