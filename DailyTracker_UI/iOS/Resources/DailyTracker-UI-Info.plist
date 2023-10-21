@@ -2,9 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string></string>
-	</array>
+    <key>UIAppFonts</key>
+    <array>
+        <string>Blight Regular.otf</string>
+        <string>BungeeLayers-Regular.otf</string>
+        <string>Degular-Bold.ttf</string>
+        <string>Degular-Regular.ttf</string>
+        <string>Degular-Medium.ttf</string>
+        <string>Degular-Semibold.ttf</string>
+        <string>EurostileExtendedBlack.ttf</string>
+    </array>
 </dict>
 </plist>
