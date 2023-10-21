@@ -9,78 +9,60 @@ import SwiftUI
 import CoreData
 
 struct MainView: View {
-    @Environment(\.managedObjectContext) private var viewContext
 
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
+    // MARK: - Variables
+    @StateObject var mainViewModel: MainViewModel = MainViewModel()
     
-    private var items: FetchedResults<Item>
-
-    private let itemFormatter: DateFormatter = {
-           let formatter = DateFormatter()
-           formatter.dateFormat = "MMMM dd, yyyy"
-           return formatter
-       }()
+    @State var viewAppeared = false
+    
     
     // MARK: - Views
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
-                    }
+        ZStack(alignment: Alignment(horizontal: .leading, vertical: .top)) {
+            Color.background
+                .edgesIgnoringSafeArea(.all)
+            VStack(alignment: .leading) {
+                HStack {
+                    Spacer()
+
+                    Text("Tracker")
+                        .font(TypefaceOne.regular.font(size: 22))
+                        .offset(x: 28)
+                    Spacer()
+                    TodayView()
                 }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-            Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-
                 
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                VStack(alignment: .leading) {
+                    Text("Hey \(mainViewModel.userName),")
+                        .font(TypefaceTwo.semibold.font(size: 30))
+                        .tracking(-0.2)
+                        .offset(y: viewAppeared ? 0 : 12)
+                        .opacity(viewAppeared ? 1 : 0.3)
+                        .animation(.easeInOut(duration: 0.2).delay(0.05), value: viewAppeared)
+                    
+                    HStack {
+                        Text("How are you")
+                            .font(TypefaceTwo.semibold.font(size: 32))
+                            .tracking(-0.2)
+                            .opacity(0.6)
+                        
+                        Text("feeling?")
+                            .font(TypefaceTwo.bold.font(size: 32))
+                            .tracking(-0.2)
+                    }
+                    .offset(y: viewAppeared ? 0 : 12)
+                    .opacity(viewAppeared ? 1 : 0.3)
+                    .animation(.easeInOut(duration: 0.2).delay(0.05), value: viewAppeared)
+                }
             }
+            .padding(.horizontal, 24)
+            .padding(.vertical, 8)
+        }
+        .onAppear() {
+            viewAppeared = true
         }
     }
+    
 }
 
 

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ImageView: View {
+struct UserImageView: View {
     
     var imageName: Image
     var lineWidth: CGFloat
@@ -32,8 +32,8 @@ struct ImageView: View {
     }
 }
 
-#Preview {
-        ImageView(imageName: Image("EX"), lineWidth: 6, borderColor: .yellow)
-    }
+//#Preview {
+//        ImageView(imageName: Image("EX"), lineWidth: 6, borderColor: .yellow)
+//    }
 
 
