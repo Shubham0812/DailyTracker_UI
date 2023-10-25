@@ -27,6 +27,7 @@
 		51A901FB2AE3BC8800AEFEE6 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A901FA2AE3BC8800AEFEE6 /* DateManager.swift */; };
 		51A901FE2AE3BCB800AEFEE6 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A901FD2AE3BCB800AEFEE6 /* TodayView.swift */; };
 		51A902012AE3C2AC00AEFEE6 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A902002AE3C2AC00AEFEE6 /* MainViewModel.swift */; };
+		E57DF4072AE7E48300B56506 /* OnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57DF4062AE7E48300B56506 /* OnboardingButton.swift */; };
 		E59FBB112ADAC664002B6F16 /* UserImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59FBB102ADAC664002B6F16 /* UserImageView.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		51A901FA2AE3BC8800AEFEE6 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		51A901FD2AE3BCB800AEFEE6 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		51A902002AE3C2AC00AEFEE6 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		E57DF4062AE7E48300B56506 /* OnboardingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButton.swift; sourceTree = "<group>"; };
 		E59FBB102ADAC664002B6F16 /* UserImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -252,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				E59FBB102ADAC664002B6F16 /* UserImageView.swift */,
+				E57DF4062AE7E48300B56506 /* OnboardingButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				51A902012AE3C2AC00AEFEE6 /* MainViewModel.swift in Sources */,
 				51A63E0C2AD1AE2400901E2B /* FoundationExtensions.swift in Sources */,
 				51A901F92AE3BC4900AEFEE6 /* FontManager.swift in Sources */,
+				E57DF4072AE7E48300B56506 /* OnboardingButton.swift in Sources */,
 				51A63DF22AD1ABD700901E2B /* Persistence.swift in Sources */,
 				51A63E122AD1B58E00901E2B /* UIApplicationExtension.swift in Sources */,
 				51A63DEB2AD1ABD600901E2B /* MainView.swift in Sources */,
