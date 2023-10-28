@@ -9,8 +9,7 @@ import SwiftUI
 
 struct AlertView: View {
     
-    // MARK: - Value
-    // MARK: Public
+    // MARK: - Public Properties
     let title: String
     let message: String
     let closeButton: CloseAlertButton?
@@ -18,7 +17,7 @@ struct AlertView: View {
     let primaryButton: AlertButton?
     let secondaryButton: AlertButton?
     
-    // MARK: Private
+    // MARK: Private Properties
     @State private var opacity: CGFloat           = 0
     @State private var backgroundOpacity: CGFloat = 0
     @State private var scale: CGFloat             = 0.001
@@ -26,9 +25,9 @@ struct AlertView: View {
     @Environment(\.dismiss) private var dismiss
     
     
-    // MARK: - View
-    // MARK: Public
+    // MARK: - Body
     var body: some View {
+        // Main content of the alert view.
         Color.clear
             .overlay(
                 ZStack {
@@ -46,7 +45,8 @@ struct AlertView: View {
             }
     }
     
-    // MARK: Private
+    // MARK: - Private View
+    // MARK: Alert View
     private var alertView: some View {
         VStack(spacing: 20) {
             
@@ -65,6 +65,7 @@ struct AlertView: View {
         .shadow(color: Color.black.opacity(0.4), radius: 16, x: 0, y: 12)
     }
     
+    // MARK: Title View
     @ViewBuilder
     private var titleView: some View {
         if !title.isEmpty {
@@ -77,6 +78,7 @@ struct AlertView: View {
         }
     }
     
+    // MARK: Message View
     @ViewBuilder
     private var messageView: some View {
         if !message.isEmpty {
@@ -89,6 +91,7 @@ struct AlertView: View {
         }
     }
     
+    // MARK: Buttons View
     private var buttonsView: some View {
         HStack(spacing: 12) {
             if dismissButton != nil {
@@ -102,6 +105,7 @@ struct AlertView: View {
         .padding(.top, 23)
     }
     
+    // MARK: Primary Button View
     @ViewBuilder
     private var primaryButtonView: some View {
         if let button = primaryButton {
@@ -117,6 +121,7 @@ struct AlertView: View {
         }
     }
     
+    // MARK: Secondary Button View
     @ViewBuilder
     private var secondaryButtonView: some View {
         if let button = secondaryButton {
@@ -132,6 +137,7 @@ struct AlertView: View {
         }
     }
     
+    // MARK: Dismiss Button View
     @ViewBuilder
     private var dismissButtonView: some View {
         if let button = dismissButton {
@@ -147,6 +153,7 @@ struct AlertView: View {
         }
     }
     
+    // MARK: Close Button View
     @ViewBuilder
     private var closeButtonView: some View {
         if let button = closeButton {
@@ -162,6 +169,7 @@ struct AlertView: View {
         }
     }
     
+    // MARK: Dim Background View
     private var dimView: some View {
         Color.gray
             .opacity(0.88)
@@ -174,9 +182,14 @@ struct AlertView: View {
     }
     
     
-    // MARK: - Function
-    // MARK: Private
+    // MARK: - Private Functions
+        
+        /// Animates the appearance/disappearance of the alert view.
+        /// - Parameters:
+        ///   - isShown: A boolean indicating whether the alert view should be shown or hidden.
+        ///   - completion: A closure to be executed after the animation completes.
     private func animate(isShown: Bool, completion: (() -> Void)? = nil) {
+        // Animation logic for showing/hiding the alert view
         switch isShown {
         case true:
             opacity = 1
@@ -203,17 +216,17 @@ struct AlertView: View {
     }
 }
 
+// MARK: - Alert Button
+/// Represents a button used in the custom alert view.
 struct AlertButton: View {
     
-    // MARK: - Value
-    // MARK: Public
+    // MARK: - Public Properties
     let title: LocalizedStringKey
     let color: Color
     var action: (() -> Void)? = nil
     
     
-    // MARK: - View
-    // MARK: Public
+    // MARK: - Body
     var body: some View {
         Button {
             action?()
@@ -232,16 +245,16 @@ struct AlertButton: View {
     }
 }
 
+// MARK: - Close Alert Buton
+/// Represents a close button used in the custom alert view.
 struct CloseAlertButton: View {
     
-    // MARK: - Value
-    // MARK: Public
+    // MARK: - Public Properties
     let systemName: String
     var action: (() -> Void)? = nil
     
     
-    // MARK: - View
-    // MARK: Public
+    // MARK: - Body
     var body: some View {
         Button {
             action?()
@@ -254,14 +267,14 @@ struct CloseAlertButton: View {
     }
 }
 
+// MARK: - Custom Alert Modifier
+/// A view modifier for presenting the custom alert view as a full-screen cover.
 struct CustomAlertModifier {
     
-    // MARK: - Value
-    // MARK: Private
+    // MARK: - Private Properties
     @Binding private var isPresented: Bool
     @State private var internalIsPresented = true
     
-    // MARK: Private
     private let title: String
     private let message: String
     private let closeButton: CloseAlertButton?
@@ -270,10 +283,10 @@ struct CustomAlertModifier {
     private let secondaryButton: AlertButton?
 }
 
-
 extension CustomAlertModifier: ViewModifier {
     @ViewBuilder
     func body(content: Content) -> some View {
+        // Applies the alert view as a full-screen cover with the specified properties.
         content
             .fullScreenCover(isPresented: $isPresented) {
                 ZStack{
@@ -288,9 +301,9 @@ extension CustomAlertModifier: ViewModifier {
     
 }
 
-
 extension CustomAlertModifier {
     
+    /// Initializes the modifier with a close button and a dismiss button.
     init(title: String = "", message: String = "", closeButton: CloseAlertButton, dismissButton: AlertButton, isPresented: Binding<Bool>) {
         self.title         = title
         self.message       = message
@@ -303,6 +316,7 @@ extension CustomAlertModifier {
         _isPresented = isPresented
     }
     
+    /// Initializes the modifier with a close button, a primary button, and a secondary button.
     init(title: String = "", message: String = "", closeButton: CloseAlertButton, primaryButton: AlertButton, secondaryButton: AlertButton, isPresented: Binding<Bool>) {
         self.title           = title
         self.message         = message
