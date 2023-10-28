@@ -30,15 +30,15 @@ struct AlertView: View {
     // MARK: Public
     var body: some View {
         Color.clear
-            .overlay(        ZStack {
-                dimView
-                    .onTapGesture { dismiss() }
-                alertView
-                    .scaleEffect(scale)
-                    .opacity(opacity)
-            }
-                .transition(.opacity)
-                             
+            .overlay(
+                ZStack {
+                    dimView
+                    alertView
+                        .scaleEffect(scale)
+                        .opacity(opacity)
+                }
+                    .transition(.opacity)
+                
             )
             .ignoresSafeArea()
             .task {
@@ -69,7 +69,7 @@ struct AlertView: View {
     private var titleView: some View {
         if !title.isEmpty {
             Text(title)
-                .font(.system(size: 18, weight: .bold))
+                .font(Font.custom("Degular-Bold", size: 18))
                 .foregroundColor(.black)
                 .lineSpacing(24 - UIFont.systemFont(ofSize: 18, weight: .bold).lineHeight)
                 .multilineTextAlignment(.leading)
@@ -81,7 +81,7 @@ struct AlertView: View {
     private var messageView: some View {
         if !message.isEmpty {
             Text(message)
-                .font(.system(size: title.isEmpty ? 18 : 16))
+                .font(Font.custom("Degular-Regular", size: title.isEmpty ? 18 : 16))
                 .foregroundColor(title.isEmpty ? .black : .gray)
                 .lineSpacing(24 - UIFont.systemFont(ofSize: title.isEmpty ? 18 : 16).lineHeight)
                 .multilineTextAlignment(.leading)
@@ -105,7 +105,7 @@ struct AlertView: View {
     @ViewBuilder
     private var primaryButtonView: some View {
         if let button = primaryButton {
-            AlertButton(title: button.title) {
+            AlertButton(title: button.title, color: button.color) {
                 animate(isShown: false) {
                     dismiss()
                 }
@@ -120,7 +120,7 @@ struct AlertView: View {
     @ViewBuilder
     private var secondaryButtonView: some View {
         if let button = secondaryButton {
-            AlertButton(title: button.title) {
+            AlertButton(title: button.title, color: button.color) {
                 animate(isShown: false) {
                     dismiss()
                 }
@@ -135,7 +135,7 @@ struct AlertView: View {
     @ViewBuilder
     private var dismissButtonView: some View {
         if let button = dismissButton {
-            AlertButton(title: button.title) {
+            AlertButton(title: button.title , color: button.color) {
                 animate(isShown: false) {
                     dismiss()
                 }
@@ -166,6 +166,11 @@ struct AlertView: View {
         Color.gray
             .opacity(0.88)
             .opacity(backgroundOpacity)
+            .onTapGesture {
+                animate(isShown: false) {
+                    dismiss()
+                }
+            }
     }
     
     
@@ -203,6 +208,7 @@ struct AlertButton: View {
     // MARK: - Value
     // MARK: Public
     let title: LocalizedStringKey
+    let color: Color
     var action: (() -> Void)? = nil
     
     
@@ -218,9 +224,11 @@ struct AlertButton: View {
                 .foregroundColor(.white)
                 .padding(.horizontal, 20)
         }
-        .frame(height: 30)
-        .background(Color.purple)
-        .cornerRadius(10)
+        .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+        .frame(height: 44)
+        .background(color)
+        .cornerRadius(8)
+        
     }
 }
 
@@ -240,8 +248,6 @@ struct CloseAlertButton: View {
             
         } label: {
             Image(systemName: systemName)
-            //                .font(.system(.title, design: .rounded))
-            //                .symbolRenderingMode(.palette)
                 .foregroundStyle(.gray, .gray.opacity(0.2))
         }
         .frame(height: 10)
@@ -314,9 +320,9 @@ extension CustomAlertModifier {
 struct AlertView_Previews: PreviewProvider {
     
     static var previews: some View {
-        let dismissButton   = AlertButton(title: "OK")
-        let primaryButton   = AlertButton(title: "Got it")
-        let secondaryButton = AlertButton(title: "Cancel")
+        let dismissButton   = AlertButton(title: "OK", color: .green)
+        let primaryButton   = AlertButton(title: "Got it", color: .purple)
+        let secondaryButton = AlertButton(title: "Cancel", color: .red)
         let closeButton = CloseAlertButton(systemName: "xmark")
         
         let title = "This is your life. Do what you want and do it often."
