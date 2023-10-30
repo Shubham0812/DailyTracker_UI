@@ -24,11 +24,7 @@ struct NavigationButtonView: View {
     private var navigationButtonView: some View {
         if let button = navigationButton {
             NavigationButton(size: button.size) {
-                // animation here
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                    button.action?()
-                }
+                button.action?()
             }
         }
     }
