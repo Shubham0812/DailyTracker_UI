@@ -27,6 +27,7 @@
 		51A901FB2AE3BC8800AEFEE6 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A901FA2AE3BC8800AEFEE6 /* DateManager.swift */; };
 		51A901FE2AE3BCB800AEFEE6 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A901FD2AE3BCB800AEFEE6 /* TodayView.swift */; };
 		51A902012AE3C2AC00AEFEE6 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A902002AE3C2AC00AEFEE6 /* MainViewModel.swift */; };
+		829C3CB42AF02EB000BE78A3 /* Emotions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829C3CB32AF02EB000BE78A3 /* Emotions.swift */; };
 		86023F102AE686C2004AC376 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86023F0F2AE686C2004AC376 /* HapticsManager.swift */; };
 		86FE6DCE2AE9558600340411 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FE6DCD2AE9558600340411 /* AlertView.swift */; };
 		E59FBB112ADAC664002B6F16 /* UserImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59FBB102ADAC664002B6F16 /* UserImageView.swift */; };
@@ -55,6 +56,7 @@
 		51A901FA2AE3BC8800AEFEE6 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		51A901FD2AE3BCB800AEFEE6 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		51A902002AE3C2AC00AEFEE6 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		829C3CB32AF02EB000BE78A3 /* Emotions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Emotions.swift; path = DailyTracker_UI/iOS/Code/Common/Emotions.swift; sourceTree = SOURCE_ROOT; };
 		86023F0F2AE686C2004AC376 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		86FE6DCD2AE9558600340411 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		E59FBB102ADAC664002B6F16 /* UserImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageView.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 		51A63E052AD1ADCC00901E2B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				829C3CB32AF02EB000BE78A3 /* Emotions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -298,7 +301,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					51A63DE42AD1ABD600901E2B = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -357,6 +360,7 @@
 				51A63E0C2AD1AE2400901E2B /* FoundationExtensions.swift in Sources */,
 				51A901F92AE3BC4900AEFEE6 /* FontManager.swift in Sources */,
 				51A63DF22AD1ABD700901E2B /* Persistence.swift in Sources */,
+				829C3CB42AF02EB000BE78A3 /* Emotions.swift in Sources */,
 				51A63E122AD1B58E00901E2B /* UIApplicationExtension.swift in Sources */,
 				86FE6DCE2AE9558600340411 /* AlertView.swift in Sources */,
 				51A63DEB2AD1ABD600901E2B /* MainView.swift in Sources */,
@@ -403,6 +407,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -463,6 +468,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
