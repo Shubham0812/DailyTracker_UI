@@ -27,8 +27,6 @@
 		51A901FB2AE3BC8800AEFEE6 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A901FA2AE3BC8800AEFEE6 /* DateManager.swift */; };
 		51A901FE2AE3BCB800AEFEE6 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A901FD2AE3BCB800AEFEE6 /* TodayView.swift */; };
 		51A902012AE3C2AC00AEFEE6 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A902002AE3C2AC00AEFEE6 /* MainViewModel.swift */; };
-		86023F102AE686C2004AC376 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86023F0F2AE686C2004AC376 /* HapticsManager.swift */; };
-		86FE6DCE2AE9558600340411 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FE6DCD2AE9558600340411 /* AlertView.swift */; };
 		E59FBB112ADAC664002B6F16 /* UserImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59FBB102ADAC664002B6F16 /* UserImageView.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,9 +53,7 @@
 		51A901FA2AE3BC8800AEFEE6 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		51A901FD2AE3BCB800AEFEE6 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		51A902002AE3C2AC00AEFEE6 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		86023F0F2AE686C2004AC376 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
-		86FE6DCD2AE9558600340411 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
-		E59FBB102ADAC664002B6F16 /* UserImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageView.swift; sourceTree = "<group>"; };
+		
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,7 +209,6 @@
 				51A63E0F2AD1B52000901E2B /* Colors.swift */,
 				51A901F82AE3BC4900AEFEE6 /* FontManager.swift */,
 				51A901FA2AE3BC8800AEFEE6 /* DateManager.swift */,
-				86023F0F2AE686C2004AC376 /* HapticsManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -256,18 +251,9 @@
 		51C665DC2AE293E00072745F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				86FE6DCC2AE9556600340411 /* Support Shapes */,
 				E59FBB102ADAC664002B6F16 /* UserImageView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		86FE6DCC2AE9556600340411 /* Support Shapes */ = {
-			isa = PBXGroup;
-			children = (
-				86FE6DCD2AE9558600340411 /* AlertView.swift */,
-			);
-			path = "Support Shapes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,7 +334,6 @@
 				51A63E0A2AD1ADE600901E2B /* Constants.swift in Sources */,
 				51A901FB2AE3BC8800AEFEE6 /* DateManager.swift in Sources */,
 				51A63E102AD1B52000901E2B /* Colors.swift in Sources */,
-				86023F102AE686C2004AC376 /* HapticsManager.swift in Sources */,
 				E59FBB112ADAC664002B6F16 /* UserImageView.swift in Sources */,
 				51A63E0E2AD1AE2A00901E2B /* ViewExtensions.swift in Sources */,
 				51A63DF52AD1ABD700901E2B /* DailyTracker_UI.xcdatamodeld in Sources */,
@@ -356,10 +341,9 @@
 				51A902012AE3C2AC00AEFEE6 /* MainViewModel.swift in Sources */,
 				51A63E0C2AD1AE2400901E2B /* FoundationExtensions.swift in Sources */,
 				51A901F92AE3BC4900AEFEE6 /* FontManager.swift in Sources */,
+				E57DF4072AE7E48300B56506 /* OnboardingButton.swift in Sources */,
 				51A63DF22AD1ABD700901E2B /* Persistence.swift in Sources */,
 				51A63E122AD1B58E00901E2B /* UIApplicationExtension.swift in Sources */,
-				86FE6DCE2AE9558600340411 /* AlertView.swift in Sources */,
-				51A63DEB2AD1ABD600901E2B /* MainView.swift in Sources */,
 				51A63DE92AD1ABD600901E2B /* DailyTracker_UIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,7 +473,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DailyTracker_UI/iOS/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = 922R4697G4;
+				DEVELOPMENT_TEAM = VXZ7XFH447;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "DailyTracker_UI/iOS/Resources/DailyTracker-UI-Info.plist";
@@ -519,7 +503,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DailyTracker_UI/iOS/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = 922R4697G4;
+				DEVELOPMENT_TEAM = VXZ7XFH447;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "DailyTracker_UI/iOS/Resources/DailyTracker-UI-Info.plist";
